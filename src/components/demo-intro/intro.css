@@ -1,0 +1,99 @@
+.ki-story * { box-sizing: border-box; }
+.ki-story { --intro-accent: #6fbfa8; border-radius: 16px; background: #111e2e; color: #f0f5fc; overflow: hidden; font-family: "IBM Plex Sans JP", "Noto Sans JP", "Hiragino Sans", sans-serif; }
+.ki-story-top { padding: 15px 20px; display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px solid #ffffff13; font-size: 11px; color: #b7c9dc; }
+.ki-story-top span:first-child { color: #fff; font-weight: 600; }
+.ki-viewport { height: 424px; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 40%, #263b53, #101c2b 80%); }
+.ki-stage { width: 920px; height: 350px; position: absolute; transform-origin: 0 0; will-change: transform; }
+.ki-device { position: absolute; background: #eef1f5; color: #1b2430; overflow: hidden; border: 2px solid #50647c; box-shadow: 0 16px 28px #0005; transition: opacity .85s ease, filter .85s ease, box-shadow .85s ease, border-color .85s ease; }
+.ki-device.ki-active { border-color: var(--intro-accent); box-shadow: 0 0 0 2px #6fbfa824, 0 0 28px #6fbfa820; opacity: 1; filter: none; }
+.ki-device.ki-idle { opacity: 0; filter: saturate(.3); box-shadow: none; pointer-events: none; }
+.ki-device-bar { height: 28px; background: #1f5f4e; color: #f4fbf8; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; font-size: 11px; font-weight: 700; }
+.ki-device-bar span { font-size: 9px; color: #c5e4da; font-weight: 400; }
+.ki-monitor { top: 8px; height: 336px; border-radius: 12px; }
+.ki-list { left: 40px; width: 236px; }
+.ki-desk { left: 320px; width: 292px; }
+.ki-monitor-body { background: #eef1f5; height: 308px; overflow: hidden; position: relative; }
+.ki-hud { position: absolute; bottom: 0; left: 0; right: 0; min-height: 88px; padding: 18px 20px; background: linear-gradient(transparent, #101c2b 30%); }
+.ki-hud p { margin: 12px auto 0; max-width: 580px; text-align: center; font-size: 13px; line-height: 1.8; }
+.ki-dots { display: flex; gap: 5px; justify-content: center; }
+.ki-dots span { width: 18px; height: 3px; background: #ffffff30; border-radius: 2px; }
+.ki-dots .ki-current { background: var(--intro-accent); }
+.ki-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 52px; padding: 8px 18px; border-top: 1px solid #ffffff14; }
+.ki-controls p { font-size: 10px; color: #b7c9dc; margin: 0; }
+.ki-controls > div { display: flex; gap: 8px; }
+.ki-controls button { border: 1px solid #63788f; color: #e9f2fc; background: transparent; border-radius: 6px; font-size: 11px; min-height: 34px; padding: 6px 10px; cursor: pointer; }
+.ki-controls button:focus-visible { outline: 3px solid #6fbfa8; outline-offset: 4px; }
+
+.wq-scale {
+  transform: scale(0.36);
+  transform-origin: top left;
+  width: 656px;
+  height: 860px;
+  padding: 12px;
+  background: #eef1f5;
+}
+.wq-desk-scale { width: 812px; }
+.ki-monitor-body .kpi {
+  display: grid !important;
+}
+.ki-monitor-body .list-hd,
+.ki-monitor-body .source-row,
+.ki-monitor-body .pc-only {
+  display: block !important;
+}
+.ki-monitor-body .detail-actions {
+  display: flex !important;
+}
+.ki-monitor-body .list {
+  overflow: visible;
+}
+.ki-monitor-body .list ul {
+  display: block;
+  width: auto;
+}
+.ki-monitor-body .list li {
+  min-width: 0;
+}
+.ki-monitor-body .list-sub {
+  white-space: normal;
+  max-width: none;
+}
+.ki-monitor-body .modal {
+  position: absolute;
+  padding: 16px;
+}
+.ki-monitor-body .toast { display: none; }
+
+.ki-embed-intro {
+  margin: 0;
+  min-height: 100dvh;
+  background: #111e2e;
+  color: #f0f5fc;
+}
+.ki-embed-intro .ki-story {
+  border-radius: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.ki-embed-intro .ki-viewport {
+  flex: 1;
+  min-height: 360px;
+}
+
+html:has(.ki-embed-intro),
+html:has(.ki-embed-intro) body {
+  background: #111e2e;
+  overflow: hidden;
+  min-height: 100dvh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ki-story *, .ki-story *::before, .ki-story *::after { transition: none !important; animation: none !important; }
+}
+@media (max-width: 600px) {
+  .ki-story-top { padding: 13px 12px; font-size: 9px; }
+  .ki-hud { padding: 14px 12px; }
+  .ki-hud p { font-size: 12px; }
+  .ki-controls { padding: 8px 12px; }
+}
