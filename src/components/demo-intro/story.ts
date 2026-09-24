@@ -4,6 +4,7 @@ export type DeviceId = "list" | "desk";
 export const scenes: {
   title: string;
   caption: string;
+  motion: string;
   duration: number;
   camera: Camera;
   stars: readonly DeviceId[];
@@ -11,6 +12,7 @@ export const scenes: {
   {
     title: "問い合わせを開く",
     caption: "届いた型番の問い合わせが、今日の机に並びます。",
+    motion: "問い合わせを開く",
     duration: 5000,
     camera: [158, 176, 1.22],
     stars: ["list"],
@@ -18,6 +20,7 @@ export const scenes: {
   {
     title: "下書きが並ぶ",
     caption: "開くと、確認結果と返信下書きが並びます。",
+    motion: "下書きが並ぶ",
     duration: 4500,
     camera: [306, 176, 0.96],
     stars: ["list", "desk"],
@@ -25,6 +28,7 @@ export const scenes: {
   {
     title: "数字を見る",
     caption: "数字は出ています。根拠の表を見てから返します。",
+    motion: "数字を見る",
     duration: 5500,
     camera: [454, 176, 1.18],
     stars: ["desk"],
@@ -32,6 +36,7 @@ export const scenes: {
   {
     title: "在庫表を見る",
     caption: "在庫表の該当行と、下書きの数字を突き合わせます。",
+    motion: "在庫表を見る",
     duration: 5500,
     camera: [454, 176, 1.2],
     stars: ["desk"],
@@ -39,6 +44,7 @@ export const scenes: {
   {
     title: "人が返す",
     caption: "返す内容は、担当者が決めます。送信はしません。",
+    motion: "人が返す",
     duration: 5500,
     camera: [454, 176, 1.15],
     stars: ["desk"],
